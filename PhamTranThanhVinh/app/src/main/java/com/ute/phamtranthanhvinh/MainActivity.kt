@@ -8,7 +8,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.ute.phamtranthanhvinh.databinding.ActivityMainBinding
-
+import com.ute.phamtranthanhvinh.utils.toAcademicRanking
 class MainActivity : AppCompatActivity() {
 
     // Khai báo biến binding
@@ -22,8 +22,10 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         // Gọi hàm hiển thị thông tin mẫu để kiểm tra giao diện
-        displayStudent("Nguyễn Văn A", 3.8, "nva@gmail.com")
-
+        displayStudent("Phạm Trần Thanh Vinh", 3.8, "vinhthanh@gmail.com")
+        val currentGpa = 3.8
+        val ranking = currentGpa.toAcademicRanking()
+        binding.tvRanking.text = "Xếp loại: $ranking"
         // Gọi thử tính điểm với also
         calculateAndAudit(8.5)
     }
@@ -36,6 +38,7 @@ class MainActivity : AppCompatActivity() {
             tvEmail.text = email
             btnUpdate.isEnabled = true
             progressBar.visibility = View.GONE
+
         }
     }
 

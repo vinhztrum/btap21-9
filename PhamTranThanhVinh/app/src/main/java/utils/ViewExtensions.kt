@@ -1,4 +1,4 @@
-package com.example.studentprofile.utils
+package com.ute.phamtranthanhvinh.utils
 import android.content.Context
 import android.view.View
 import android.widget.EditText
@@ -13,3 +13,11 @@ fun Context.toast(message: String, duration: Int = Toast.LENGTH_SHORT) {
 }
 // ── 3. Lấy chuỗi từ EditText đã cắt khoảng trắng thừa ────
 fun EditText.trimmedText(): String = text.toString().trim()
+fun Double.toAcademicRanking(): String = when {
+    this >= 3.6 -> "Xuất sắc (Excellent)"
+    this >= 3.2 -> "Giỏi (Very Good)"
+    this >= 2.5 -> "Khá (Good)"
+    this >= 2.0 -> "Trung bình (Average)"
+    this >= 1.0 -> "Yếu (Weak)" else -> "Kém (Poor)"
+}
+// ── Cách dùng trực tiếp trong MainActivity.kt: ────────────
