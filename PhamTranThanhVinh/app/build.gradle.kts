@@ -17,7 +17,9 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
+    buildFeatures {
+        viewBinding = true
+    }
     buildTypes {
         release {
             optimization {
@@ -29,6 +31,7 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+
 }
 
 dependencies {
@@ -40,19 +43,4 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
-}
-android {
-    namespace = "com.example.studentprofile"
-    compileSdk = 35
-    defaultConfig {
-        applicationId = "com.example.studentprofile"
-        minSdk = 24
-        targetSdk = 35
-        versionCode = 1
-        versionName = "1.0"
-    }
-// ── KÍCH HOẠT VIEWBINDING TẠI ĐÂY ────────────────────────
-    buildFeatures {
-        viewBinding = true
-    }
 }
